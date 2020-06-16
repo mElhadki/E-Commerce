@@ -1,0 +1,7 @@
+{
+    "require": {
+        "cache/predis-adapter": "^1.0",
+        "weglot/weglot-php": "^0.2",
+        "vlucas/phpdotenv": "^2.4"
+    }
+}

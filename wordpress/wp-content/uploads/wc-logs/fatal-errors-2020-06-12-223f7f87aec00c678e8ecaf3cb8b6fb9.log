@@ -1,0 +1,4 @@
+2020-06-12T20:34:35+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\plugins\woo-cart-abandonment-recovery\classes\class-cartflows-ca-settings.php on line 11
+
+2020-06-12T20:34:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\plugins\woocommerce\includes\wc-template-functions.php on line 18
+

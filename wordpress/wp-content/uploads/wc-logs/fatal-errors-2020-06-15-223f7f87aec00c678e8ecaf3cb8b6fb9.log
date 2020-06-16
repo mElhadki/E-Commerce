@@ -1,0 +1,20 @@
+2020-06-15T12:22:16+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\themes\oceanwp\functions.php on line 22
+
+2020-06-15T12:22:34+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\plugins\elementor-pro\modules\theme-builder\conditions\any-child-of.php on line 4
+
+2020-06-15T14:03:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\test\wordpress\wp-includes\widgets\class-wp-widget-pages.php on line 17
+
+2020-06-15T14:04:05+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\test\wordpress\wp-content\themes\oceanwp\inc\breadcrumbs.php on line 34
+
+2020-06-15T14:04:33+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\test\wordpress\wp-content\plugins\elementor\includes\widgets\image-carousel.php on line 4
+
+2020-06-15T21:16:13+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-includes\Requests\Transport\cURL.php on line 463
+
+2020-06-15T21:18:21+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-admin\includes\class-wp-filesystem-direct.php on line 81
+
+2020-06-15T21:23:42+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-includes\Requests\Transport\cURL.php on line 463
+
+2020-06-15T21:31:39+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-admin\includes\class-wp-filesystem-direct.php on line 81
+
+2020-06-15T21:52:17+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-admin\includes\class-wp-filesystem-direct.php on line 81
+

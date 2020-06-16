@@ -1,0 +1,6 @@
+2020-06-11T16:55:36+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-admin\includes\class-wp-filesystem-direct.php on line 81
+
+2020-06-11T18:09:57+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\plugins\cartflows\modules\checkout\classes\class-cartflows-checkout-meta.php on line 11
+
+2020-06-11T18:10:56+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\plugins\woocommerce\includes\tracks\class-wc-site-tracking.php on line 13
+

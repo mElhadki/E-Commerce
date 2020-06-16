@@ -1,0 +1,51 @@
+
+body {
+	div[id^="mega-menu-wrap"] {
+		#mega-menu-primary {
+			li.mega-menu-item.weglot-flags{
+				a.mega-menu-link{
+					&:before {
+						background-image: url('../images/rect_mate.png') !important;
+						background-size: auto 20px !important;
+						border-radius: 0px !important;
+						width: 30px !important;
+						height: 20px !important;
+						content: "";
+						vertical-align: middle;
+						margin-right: 10px;
+						display: inline-block;
+						overflow: hidden;
+					}
+				}
+				&.flag-1 {
+					.mega-menu-link {
+						&:before {
+							background-image: url("../images/rect_bright.png") !important;
+						}
+					}
+				}
+				&.flag-2 {
+					.mega-menu-link {
+						&:before {
+							background-image: url("../images/square_flag.png") !important;
+							width: 24px !important;
+							height: 24px !important;
+							background-size: auto 24px !important;
+						}
+					}
+				}
+				&.flag-3 {
+					.mega-menu-link {
+						&:before {
+							background-image: url("../images/circular_flag.png") !important;
+							width: 24px !important;
+							height: 24px !important;
+							background-size: auto 24px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

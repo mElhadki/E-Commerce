@@ -1,0 +1,227 @@
+/* Settings Tab */
+.wcf-tab {
+    display: inline-block;
+    padding: 10px;
+    background: #eee;
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.wcf-tab.active {
+    background: #5a5a5a;
+    /*color: white;*/
+}
+
+.wcf-tab-wrapper {
+    margin: 15px 0;
+}
+
+.wcf-tab-content {
+    display: none;
+}
+
+.wcf-tab-content.active {
+    display: block;
+}
+
+/* Tab Footer */
+
+.wcf-update-step {
+    float: left;
+}
+
+.wcf-back-to-flow-edit .dashicons {
+    vertical-align: sub;
+    font-size: 1rem;
+}
+
+.wcf-column-right-footer {
+    padding: 10px 20px;
+    border-right: 1px #ddd solid;
+    border-top: 1px #ddd solid;
+    background: #fafafa;
+}
+
+/* Settings Tab End */
+
+.wcf-variation-mode {
+    display: none;
+}
+td.wcf-field-section-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.wcf-field-row-heading {
+    width: 30%; 
+}
+
+.wcf-field-row-content {
+    width: 70%;
+}
+
+
+/* Select2 */
+.wcf-field-row .wcf-target-product-select2 {
+    width: 50%;
+    height: 28px !important;
+}
+
+.wcf-field-row .wcf-product-search,
+.wcf-field-row .wcf-coupon-search,
+.wcf-field-row .wcf-search-pages {
+    width: 100%;
+    height: 28px !important;
+}
+
+body span.select2.select2-container.select2-container--default {
+    width: 350px;
+    max-width: 100% !important;
+    margin-top: 0;
+}
+
+body li.select2-results__option.select2-results__message {
+    background: #ecebeb;
+    margin-bottom: 0;
+}
+
+/* Repeater Product Field */
+
+.wcf-product-repeater-field-row .wcf-field-row-content {
+    max-width: 100% !important;
+}
+
+.wcf-repeatable-row {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 5px;
+}
+
+.wcf-repeatable-row-header {
+    background: #f1f1f1;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px;
+}
+
+.wcf-repeatable-row-standard-fields {
+    padding: 8px;
+}
+
+.wcf-repeatable-row-actions {
+    float: left;
+}
+
+.wcf-repeatable-row-setting-label,
+.wcf-repeatable-row-setting-field {
+	display: inline-block;
+}
+
+.wcf-repeatable-row-setting-field {
+	width: 95%;
+    max-width: calc( 100% - 100px );
+}
+
+.wcf-repeatable-fields {
+	margin-bottom: 10px;
+}
+
+.wcf-add-repeatable-wrap {
+    float: none !important;
+    clear: both;
+    background: #fff !important;
+    padding: 4px 0 0 4px !important;
+}
+
+.wcf-add-repeatable-wrap button.button-primary {
+    margin: 0 0 0 8px;
+}
+
+.wcf-repeatable-remove {
+    cursor: pointer;
+}
+
+
+.wcf-quantity-table {
+    border: 1px solid #e5e5e5;
+    border-spacing: 0;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+.wcf-quantity-table tr {
+   border-bottom: 1px solid #e5e5e5;
+    
+}
+
+
+/* Custom FIeld */
+.wcf-cpf-row {
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 5px;
+}
+
+.wcf-cpf-row-header {
+    background: #f1f1f1;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px;
+}
+
+.wcf-cpf-fields {
+    padding: 8px;
+    margin-bottom: 0px;
+}
+
+.wcf-cpf-fields.wcf-cpf-options .wcf-cpf-row-setting-label{
+    vertical-align: top;
+}
+
+.wcf-cpf-row-setting-label {
+    width: 25%;
+    display: inline-block;
+}
+
+.wcf-cpf-row-setting-label i{
+    color: red;
+}
+
+.wcf-cpf-row-setting-field {
+    width: 75%;
+    display: inline-block;
+}
+
+.wcf-field-row .wcf-cpf-actions a {
+    cursor: pointer;
+}
+
+/*.wcf-repeatables-wrap.ui-sortable {
+        width: 60%;
+}*/
+
+
+
+
+@media screen and (min-width:439px) and (max-width:1180px){
+    .wcf-repeatable-row-setting-field {
+        width:60%;
+    }
+    .wcf-repeatable-row-standard-fields{
+        display:flex;
+    }
+}
+
+.wcf_toggle_advance_fields{
+    pointer-events: none;
+}
+
+
+/* Color Picker Field Fixes */
+.wcf-table-container .wcf-column-right .wcf-field-color-picker .wcf-field-row-content {
+    vertical-align: top;
+}
+
+.wcf-field-color-picker .button.wp-picker-clear {
+    margin-right: 7px;
+    min-height: 30px;
+}

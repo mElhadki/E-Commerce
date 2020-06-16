@@ -1,0 +1,104 @@
+.post-type-cartflows_flow.post-php a.page-title-action {
+    display: none;
+}
+
+.wcf-flow-steps-meta-actions {
+    margin: 1em 0 2em 0;
+}
+.wcf-flow-steps-meta-box {
+    display: block;
+    clear: both;
+}
+.wcf-flow-settings {
+    display: flex;
+    clear: both;
+}
+.wcf-flow-steps-wrap {
+    display: inline-block;
+    width: 30%;
+    padding-right: 1em;
+    border-right: 1px solid #e5e5e5;
+}
+.wcf-flow-steps-data-wrap {
+    display: inline-block;
+    width: 70%;
+    padding: 1em 1.5em;
+}
+
+.wcf-step-content {
+    display: none;
+}
+
+.wcf-add-flow-step-data th,
+.wcf-add-flow-step-data td {
+    padding: 0 10px 10px 0;
+}
+
+.wcf-word-wrap{
+    width: 55%;
+    display: inline-flex;
+}
+
+.wcf-import-step-content{
+    display: table;
+}
+
+.wcf-import-step-message,
+.wcf-import-step-button{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.wcf-import-step-message p{
+    margin:0px;
+    padding: 0px;
+    text-align: justify; 
+    padding-right: 15px;
+}
+
+/* Invalide Step */
+.wcf-step-wrap.invalid-step {
+    pointer-events: none;
+}
+.wcf-step-wrap.invalid-step .wcf-step-delete{
+    pointer-events: auto;
+}
+.wcf-step-wrap.invalid-step .wcf-step .wcf-flow-badge {
+    color: red;
+}
+
+.wcf-no-product-badge{
+    color: #FFFFFF;
+    background-color: #f16334;
+    padding: 0.3em .6em 0.3em;
+    font-size: 0.7em;
+    font-weight: 600;
+    border-radius: 0px;
+    line-height: 0.7em;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wcf-global-checkout-badge{
+    color: #FFFFFF;
+    background-color: #0072A7;
+    padding: 0.3em .6em 0.3em;
+    font-size: 0.7em;
+    font-weight: 600;
+    border-radius: 0px;
+    line-height: 0.7em;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.wcf-global-checkout-badge.wcf-error-badge{
+    color: #fff;
+    background-color: #d54e21;
+}
+
+.wcf-step-wrap.wcf-no-product-step{
+    border-left: 3px solid #f16334;
+}
+

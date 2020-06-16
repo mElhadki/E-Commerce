@@ -1,0 +1,4 @@
+2020-06-15T14:26:59+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-admin\includes\user.php on line 16
+
+2020-06-15T20:16:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in C:\xampp1\htdocs\wordpress\wp-content\themes\astra\inc\blog\blog-config.php on line 9
+

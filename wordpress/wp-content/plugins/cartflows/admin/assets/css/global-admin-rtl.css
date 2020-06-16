@@ -1,0 +1,1214 @@
+/*
+* ************************************************
+* Plugin Name: Cartflows
+* Plugin URL: https://cartflows.com/
+* Description: CartFlows for WooCommerce.
+* Author: Brainstorm Force
+* Author URI: https://www.brainstormforce.com/
+* Version: 1.0
+* ************************************************
+*/
+
+/**
+* *********************
+* Cartflows Font Icon
+* *********************
+*/
+@font-face {
+    font-family: 'cartflows-logo-icon';
+    src:  url('../fonts/cartflows-logo-icon.eot?kxnn1n');
+    src:  url('../fonts/cartflows-logo-icon.eot?kxnn1n#iefix') format('embedded-opentype'),
+    url('../fonts/cartflows-logo-icon.ttf?kxnn1n') format('truetype'),
+    url('../fonts/cartflows-logo-icon.woff?kxnn1n') format('woff'),
+    url('../fonts/cartflows-logo-icon.svg?kxnn1n#cartflows-logo-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wcf-cartflows-logo-img [class^="cartflows-icon"], .wcf-cartflows-logo-img [class*=" cartflows-icon"], /* For Pro Compatibility */
+[class^="cartflows-logo-icon"], [class*=" cartflows-logo-icon"]{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'cartflows-logo-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wcf-cartflows-logo-img .cartflows-icon:before, /* For Pro Compatibility */
+.cartflows-logo-icon:before {
+  content: "\e900";
+  color: #f16334;
+}
+
+
+/**
+ *
+ * Step Meta - All Page Css
+ */
+
+.post-type-cartflows_step #delete-action {
+    display: none;
+}
+
+/*
+* ************************
+* Post page Name & Button
+* ************************
+*/
+
+.post-type-cartflows_flow .wrap{
+    margin: 25px 2px 0 20px;
+}
+
+.wcf-notice-back-edit-flow .dashicons {
+    vertical-align: text-bottom;
+}
+
+.post-type-cartflows_flow .wcf-notice-back-edit-flow{
+        margin-top: 30px;
+}
+
+.post-type-cartflows_flow .wcf-notice-back-edit-flow .button-primary{
+    height: 30px;
+}
+
+.wcf-notice-back-edit-flow .dashicons-arrow-left-alt{
+    vertical-align: text-bottom;
+}
+
+.wcf-notice-back-edit-flow .button.button-large{
+    margin: 2px;
+    height: 33px;
+    font-size: 13px;
+}
+
+.wcf-notice-back-edit-flow.gutenberg-button .dashicons-arrow-left-alt{
+    vertical-align: middle;
+}
+
+/*
+* ************************
+* Add Flow Popup Window
+* 1. Overlay
+* 2. Popup Box Alignment
+* 3. Buttons & Textbox
+* 4. wcf-choose-type-box
+* ************************
+*/
+
+.wcf-overlay , .wcf-overlay-newstep {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    top: 0;
+    right: 0;
+}
+
+.wcf-popup .wcf-popup-header{
+    padding: 12px 20px;
+    overflow: hidden;
+}
+
+.wcf-popup .wcf-popup-header label{
+    color: #fff;
+    font-weight: 600;
+    float: right;
+}
+.wcf-popup, .wcf-popup-newstep {
+    display: none;
+    width: 600px;
+    top: 50%;
+    right: 50%;
+    position: fixed;
+    background: #ffffff;
+    transform: translate( 50%, -50% );
+    padding: 0px;
+}
+
+.wcf-close , .wcf-close-newstep{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: transparent;
+    color: #ffff;
+    font-size: 18px;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.wcf-close .dashicons-no-alt{
+    vertical-align: middle;
+}
+
+.wcf-content {
+    text-align: right;
+    padding: 20px;;
+}
+
+.wcf-submit-wrap {
+    text-align: left;
+    margin: 25px 0 0 0;
+}
+
+.wcf-overlay.show,
+.wcf-popup.show,
+.wcf-overlay-newstep.show,
+.wcf-popup-newstep.show 
+ {
+    display: block;
+}
+
+.wcf-content input[type='text'] {
+    background-color: transparent;
+    box-shadow: none;
+    border:none;
+    border-bottom: 1px #ddd solid;
+    padding: 10px 0 10px;
+    width: 100%;
+    font-size: 15px;
+}
+.wcf-content input[type='text']:focus {
+    border-bottom: 1px #5b9dd9 solid;
+}
+
+.wcf-popup .wcf-choose-type-box{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 0 15px 0;
+    overflow: overlay;
+}
+
+.wcf-popup .wcf-choose-type-box .wcf-default-type-box,
+.wcf-popup .wcf-choose-type-box .wcf-import-type-box{
+    flex: 0 0 50%;
+    width: 46%;
+    float: right;
+    padding: 10px;
+}
+
+.wcf-default-type-box .wcf-default-type-content,
+.wcf-import-type-box .wcf-import-type-content{
+    text-align: center;
+    padding: 0 0px 15px;
+}
+
+.wcf-default-type-box .wcf-default-type-content h3,
+.wcf-import-type-box .wcf-import-type-content h3{
+    line-height: 1.4em;
+}
+
+.wcf-default-type-content:hover h3,
+.wcf-import-type-content:hover h3{
+    color: rgb(0, 133, 186, 1)
+}
+
+.wcf-default-type-content h3 .dashicons,
+.wcf-import-type-content h3 .dashicons{
+    vertical-align: middle;
+}
+
+.wcf-default-type-content .wcf-create-flow .dashicons-plus,
+.wcf-import-type-content .wcf-create-flow .dashicons-plus{
+    vertical-align: middle;
+}
+
+/**
+* ************************
+* Flow Setting Meta Box
+* ************************
+*/
+
+.wcf-tooltip-text{
+    background: #444;
+    border-radius: 3px;
+    color: #fff;
+    height: auto;
+    right: 56px;
+    margin-top: 10px;
+    max-width: 150px;
+    position: absolute;
+    padding: 6px 10px;
+    top: auto;
+    display: none;
+    z-index: 10000;
+}
+
+.wcf-tooltip-text::before {
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #444;
+    bottom: auto;
+    content: " ";
+    font-size: 0;
+    right: 56px;
+    line-height: 0;
+    margin-right: -5px;
+    position: absolute;
+    top: -10px;
+    width: 0;
+}
+
+.display_tool_tip{
+    display: block;
+}
+
+/*.wcf-tooltip::before {
+    position: absolute;
+    top: 48px;
+    left: 53px;
+    background-color: #444;
+    border-radius: 5px;
+    color: #fff;
+    content: attr(data-tooltip);
+    padding: 0.5rem;
+    text-transform: none;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    width: 160px;
+    height: auto;
+    line-height: 1em;
+ }
+
+.wcf-tooltip::after {
+    position: absolute;
+    top: auto;
+    bottom: 170px;
+    left: 115px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid #444;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    margin-left: -5px;
+    width: 0;
+}
+
+
+.wcf-tooltip.display_toot_tip::before,
+.wcf-tooltip.display_toot_tip::after {
+  opacity: 1;
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+    word-break: break-all;
+}
+ 
+.wcf-tooltip::before,
+.wcf-tooltip::after {
+    color: #efefef;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-size: 13px;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+}*/
+
+.wcf-flow-sandbox-table .wcf-field-row .wcf-field-row-content{
+    width: 100%;
+}
+
+/**
+* ******************************************************
+* Shortcode Box on the Head Section of Checkout Meta Box
+* ******************************************************
+*/
+/*
+* ************************
+* Css For
+* 1. Flow Metabox
+* 2. Textboxes
+* 3. Select
+* 4. Buttons
+* 5. Steps Boxes
+* ************************
+*/
+
+/*
+* ***************************************
+* Flow Page Css (After removing meta box)
+* 1. Step Badges
+* ***************************************
+*/
+
+.wcf-flow-steps-meta-box{
+    margin-top: 20px;
+}
+
+.wcf-flow-steps-meta-box .wcf-flow-settings{
+    width: 100%;
+    display: block;
+}
+
+.wcf-flow-steps-meta-box .wcf-new-step-badge
+{
+    background-color: #0073aa;
+    color: #fff;
+}
+
+.wcf-flow-steps-meta-box .wcf-new-step-badge,
+.wcf-flow-steps-meta-box .wcf-step-wrap .wcf-step .wcf-flow-badge,
+.wcf-flow-steps-meta-box .wcf-step-wrap.active .wcf-step .wcf-flow-badge{
+    color: #000;
+    background-color: #E3E4E8;
+    padding: 0.3em .6em 0.3em;
+    font-size: 0.7em;
+    font-weight: 600;
+    border-radius: 0px;
+    line-height: 0.7em;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#wcf-flow-settings .inside{
+    margin: 10px 0 0;
+}
+
+.wcf-flow-settings .wcf-flow-steps-data-wrap {
+    padding: 0 1em 1.5em;
+}
+.wcf-flow-settings .wcf-flow-steps-wrap{
+    border-left:none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0px;
+}
+
+.wcf-flow-settings .wcf-step-left-content,
+.wcf-flow-settings .wcf-steps-action-buttons{
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+    font-size: 13px;
+    line-height: 3em;
+}
+
+.wcf-flow-settings .wcf-step-left-content{
+    text-align: right;
+}
+
+.wcf-step-left-content .dashicons{
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.wcf-flow-settings .wcf-steps-action-buttons{
+    text-align: left;
+}
+
+.wcf-flow-settings .wcf-flow-steps-wrap .wcf-action-button{
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.wcf-flow-settings .wcf-action-button .dashicons{
+    pointer-events: none;
+    font-size: 1.5em;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.wcf-flow-settings .wcf-flow-steps-wrap .wcf-action-button .wcf-step-act-btn-text {
+    display: inline-block;
+    line-height: 1.5em;
+}
+
+.wcf-flow-settings .wcf-flow-steps-wrap .wcf-step{
+    color: #444;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0px #ddd;
+    padding: 15px 10px;
+    cursor: move;
+}
+
+
+.wcf-new-step-highlight{
+    border-right: 3px #0073aa solid;   
+}
+
+.wcf-popup input[type='radio']
+{
+    margin-top: 0px;
+}
+
+.wcf-popup label{
+    font-size: 16px;
+}
+
+.wcf-step-wrap {
+    margin-bottom: 15px;
+}
+
+#wcf-sandbox-settings .inside{
+    margin: 15px 0 10px;
+}
+
+.wcf-general-metabox-wrap .wcf-field-row{
+    display: inline-flex;
+    width: 100%;
+}
+
+.wcf-general-metabox-wrap .wcf-field-desc {
+    padding: 6px 0 0;
+}
+
+/* 
+* *****************************
+* Custom classes for common use
+* *****************************
+*/
+
+#wcf-sandbox-settings.wcf-highlight {
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+  transition: all 0.5s ease;
+}
+
+.pull-right{
+    float: left;
+}
+
+.pull-left{
+    float: right;
+}
+
+.text-error {
+    border-bottom: 1px #FF5050 solid !important;
+}
+
+input[type="text"].error,
+input[type="text"].error:focus{
+    border-color: red;
+    box-shadow: 0 0 2px rgba(30,140,190,0);
+}
+
+#show_error {
+    font-style: italic;
+    color: #FF5050
+}
+
+.wp-ui-text-primary {
+    color: #0073aa;
+}
+
+.wcf-column-left{
+    width: 25%;
+    float: right;
+    position: relative;
+    max-width: 300px;
+}
+
+.wcf-column-right{
+    width: 75%;
+    float: right;
+    position: relative;
+    background-color: #fff;
+}
+
+.wcf-import-step-content{
+    border-top: 1px #ddd solid;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+/*
+* ************************
+* Display Template div css
+* 1 Add, View & Import Buttons & Icons
+* ************************
+*/
+
+.wcf-flow-steps-data-wrap .wcf-step-content a .dashicons {
+    vertical-align: middle;
+}
+
+/*
+* ************************************************
+* Meta Boxs (All)
+* 1. Setting Meta Box (#wcf-step-settings)
+* 2. Checkout layout Meta Box (#wcf-checkout-settings)
+* 3. Downsell Meta Box (#wcf-offer-settings)
+* 4. Thank You Meta Box (#wcf-thankyou-settings)
+* 5. Upsell Meta Box (#wcf-upsell-settings)
+* ************************************************
+*/
+.wcf-repeat-notice,
+#wcf-checkout-settings .wcf-checkout-table .wcf-checkout-style .wcf-cs-fields .wcf-cs-checkbox-field .field-wcf-advance-options-fields{
+    border-top: 1px #ddd solid;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.wcf-repeat-notice p{
+    margin: 5px 0px;
+}
+
+/*
+* Inside Div css for all the metaboxes
+*/
+#wcf-ladning-settings .inside,
+#wcf-checkout-settings .inside,
+#wcf-offer-settings .inside,
+#wcf-upsell-settings .inside,
+#wcf-optin-settings .inside,
+#wcf-thankyou-settings .inside{
+    margin:0px;
+    padding: 0px;
+    line-height: 0.9em;
+}
+
+/**
+* ****************************
+* 1. Container
+* 2. Row
+* 3. Content Divs
+* 4. Button Divs
+* 5. Alignment Classes
+* ****************************
+*/
+.wcf-table-container{
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    background-color: #fafafa;
+    margin-top: 0px;
+    line-height:1.2;
+}
+
+
+.wcf-column-right .wcf-field-section .wcf-field-section-heading{
+    color: #333;
+    padding: 10px 0 5px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.show_box
+{
+    display: block!important;
+}
+
+.wcf-table-container .wcf-column-right .wcf-custom-field-box .wcf-field-row-content{
+    width: 100%;
+    border:1px solid #e5e5e5;
+}
+
+.wcf-table-container .wcf-column-right .wcf-custom-field-box .wcf-cpf-row{
+    border:none;
+    margin-bottom: 0px;
+}
+
+.wcf-table-container .wcf-column-right .wcf-custom-field-box .wcf-cpf-add-row{
+    padding: 0px 8px 10px;
+    background-color: #f9f9f9;
+}
+
+.wcf-table-container .wcf-column-right .wcf-field-row-heading{
+    font-size: 12px;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    line-height: 1.5em;
+    vertical-align: middle;
+    min-height: 28px;
+}
+.wcf-table-container .wcf-column-right .wcf-field-row-content{
+    width: auto;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.wcf-table-container .wcf-column-right .wcf-field-row-heading .dashicons {
+    line-height: 1;
+    margin-right: 5px;
+}
+
+/*.wcf-cb-fields{
+    width: 50%;
+    float: left;
+}*/
+
+.wcf-cb-fields,
+.wcf-sb-fields{
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+.wcf-cb-fields .wcf-field-row-heading,
+.wcf-sb-fields .wcf-field-row-heading,
+.wcf-cb-fields .wcf-field-row-content,
+.wcf-sb-fields .wcf-field-row-content,
+.wcf-repeatables-wrap .wcf-repeatable-row .wcf-field-row-heading,
+.wcf-repeatables-wrap .wcf-repeatable-row .wcf-field-row-content{
+    width: 50% !important;
+}
+
+.wcf-table-container .wcf-column-right .wcf-field-row .select2-container .select2-selection--single{
+    margin: 0px;
+}
+.wcf-table-container .wcf-column-right .wcf-field-row .select2-container .select2-selection--single .select2-selection__rendered{
+    outline: none;
+}
+
+.wcf-checkout-table .select2-container--default .select2-selection--single .select2-selection__clear{
+    display: block;
+}
+
+.wcf-table-container .wcf-column-right .wcf-field-row input[type="text"],
+.wcf-table-container .wcf-column-right .wcf-field-row input[type="number"],
+.wcf-table-container .wcf-column-right .wcf-field-row select,
+.wcf-table-container .wcf-column-right .wcf-field-row textarea,
+.wcf-table-container .wcf-column-right .wcf-field-row .select2-container--default{
+    width: 300px;
+    max-width: 100%;
+}
+
+.wcf-table-container .wcf-column-right .wcf-field-row .wp-picker-container input[type=text].wp-color-picker{
+    width: 65px;
+}
+#wcf-step-settings .inside .wcf-checkout-table .field-wcf-step-type .wcf-field-row-content select{
+    border: none;
+    border-bottom: 1px #ccc solid;
+    box-shadow: none;
+    padding: 5px;
+    width: 30%;
+}
+
+/*
+* ************************************
+* All Page Types Setting's Meta Box 
+*   Contains
+*   Checkout Metabox
+*   Upsell Metabox
+*   Downsell Metabox
+*   Thank You Metabox
+* ************************************
+*/
+.wcf-table-container .wcf-tab-wrapper{
+    background: #fafafa;
+    border:none;
+    margin: 0px 0 0;
+}
+
+.wcf-table-container .wcf-tab-wrapper .wcf-tab{
+    background: transparent;
+    border-bottom: 1px #eee solid;
+    display: block;
+    margin: 0;
+    color: #0073aa;
+    line-height: 1em;
+}
+
+.wcf-table-container .wcf-tab-wrapper .wcf-tab .wcf-tab-title{
+    margin-right: .200em;
+    margin-left: .618em;
+}
+
+.wcf-table-container .wcf-tab-wrapper .wcf-tab.active{
+    background-color: #eee;
+    color: #555;
+}
+
+.wcf-table-container .wcf-tab-wrapper .wcf-tab .dashicons{
+    font-size: initial;
+    width: auto;
+    height: auto;
+}
+
+.wcf-table-container .wcf-tab-content{
+    border: 1px #ddd solid;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    min-height: 227px;
+    overflow: hidden;
+    padding: 10px 0px;
+}
+
+.wcf-table-container .wcf-column-right .wcf-field-row,
+.wcf-table-container .wcf-column-right .wcf-field-row,
+.wcf-table-container .wcf-column-right .wcf-field-row,
+.wcf-table-container .wcf-column-right .wcf-field-row{
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.wcf-table-container .wcf-checkout-style .wcf-cs-fields-options,
+.wcf-table-container .wcf-checkout-style .wcf-cs-button-options{
+    display: none;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row{
+    background: #fff;
+    border:none; 
+    margin-bottom: 5px;
+}
+.wcf-repeatables-wrap .wcf-repeatable-row-standard-fields{
+    position: relative;
+    padding: 0px;
+    height: auto;
+    min-height: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row-standard-fields .wcf-repeatable-row-actions{
+    float: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+/*sonali*/
+.wcf-table-container .wcf-repeatable-fields .select2-container .select2-selection--single {
+    height: 34px;
+}
+
+.wcf-table-container .wcf-repeatable-fields .select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 34px;
+}
+
+.wcf-table-container .wcf-repeatable-row-advance-fields .wcf-field-row-advance-content{
+    width:70%;
+}
+
+.wcf-repeatable-row-standard-fields .wcf-checkout-products-dashicon{
+    cursor: move;
+}
+
+
+.wcf-repeatable-row-standard-fields .wcf-checkout-products-dashicon,
+.wcf-repeatable-row-standard-fields .wcf-sel-product{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.wcf-repeatable-row-standard-fields .wcf-sel-product {
+    margin: 0 10px 0 0;
+    max-width: 90%;
+}
+
+.wcf-repeatable-row-standard-fields .wcf_toggle_advance_fields{
+    display: inline-flex;
+    font-size: 12px;
+    float: left;
+    position: relative;
+    left: 0px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row.active .wcf-repeatable-row-advance-fields{
+    display: block;
+    background: rgb(236, 236, 236, 0.2);
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row .wcf-repeatable-row-advance-fields{
+    display: none;
+    width: auto;
+    padding: 15px;
+    position: relative;
+    z-index: 10;
+    border: 1px solid #ececec;
+    border-top: none;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row-advance-fields .wcf-field-row{
+    display: flex;
+    padding: 5px 0 5px 2px;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row.active .wcf-repeatable-row-advance-fields .wcf-field-row{
+    /*overflow: visible;*/
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row .wcf-field-row-heading {
+    font-size: 12px;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    line-height: 1.5em;
+    vertical-align: middle;
+    min-height: 28px;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row .wcf-field-row-content  {
+    width: auto;
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row-advance-fields .wcf-field-row input[type="text"], 
+.wcf-repeatables-wrap .wcf-repeatable-row-advance-fields .wcf-field-row input[type="text"], 
+.wcf-repeatables-wrap .wcf-repeatable-row-advance-fields .wcf-field-row select, 
+.wcf-repeatables-wrap .wcf-repeatable-row-advance-fields .wcf-field-row select{
+    width: 100%;
+    margin-left: 10px;
+    background-color: #fff;
+    max-width: 100%;
+}
+
+.wcf-hide-advance{
+    display:none;
+}
+
+.wcf-checkout-general .wcf-repeatables-wrap .wcf-repeatable-row{
+    background: #fff;
+    /*border-bottom: 1px solid #eee;*/
+    margin-bottom: 10px;
+}
+
+.wcf-checkout-general .wcf-repeatables-wrap .wcf-repeater-fields-head-wrap {
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    clear: both;
+    cursor: pointer;
+    line-height: 1.5em;
+    position: relative;
+    border: 1px solid #eee;
+
+}
+.wcf_toggle_advance_fields{
+    vertical-align:top;
+}
+/*.wcf-repeatable-row{
+   border-bottom: 1px solid #E7E7E7;
+}*/
+
+/*sonali*/
+
+.wcf-repeatables-wrap .wcf-repeatable-row-standard-fields .wcf-repeatable-remove{
+    vertical-align: middle;
+    padding: 5px;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+.wcf-repeatables-wrap .wcf-repeatable-row-standard-fields .wcf-repeatable-remove .dashicons{
+    vertical-align: middle;
+    font-size: 1em;
+    line-height: 1em;
+    width: 14px;
+    height: 16px;
+    text-align: left;
+}
+
+.field-wcf-tq-advance-options-fields{
+    border-top: 1px solid #DDD;
+    margin-top: 15px;
+}
+
+.wcf-table-container .wcf-column-right .field-wcf-hr-line {
+    padding-right: 0; 
+    padding-left: 0; 
+}
+
+.wcf-table-container .wcf-column-right .field-wcf-hr-line .wcf-field-row-content {
+    width: 100%;
+}
+
+.wcf-table-container .wcf-radio-option {
+    margin-bottom: 10px;
+}
+
+/**
+ * ******************************
+ * Field - Post Meta Typography
+ * ******************************
+ */
+.wcf-metabox-wrap .select2-container--default .select2-selection--single {
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
+    background-color: #fff;
+    color: #32373c;
+    outline: none;
+    transition: 0.05s border-color ease-in-out;
+    border-radius: 0;
+    font-size: 13px;
+}
+
+.wcf-metabox-wrap .select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #ddd;
+    box-shadow: none;
+}
+
+/**
+* ************************
+* Create Woo Product Start
+* ************************
+*/
+
+.wcf-create-woo-iframe-opened{
+    overflow: hidden;
+}
+
+.wcf-create-woo-product-overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.wcf-create-woo-product-overlay.open {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999999;
+}
+
+.wcf-create-woo-product-wrap{
+    max-width: 100%;
+    background-color: transparent;
+    position: relative;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    top: 50%;
+    margin: 0 auto;
+    -ms-transform: translate(50%, -35%);
+    width: 90%;
+    min-height: 85%;
+    max-height: 85%;
+    height: 85%;
+    transform: translateY(-50%);
+    z-index: 99999;
+}
+
+.wcf-create-woo-product-wrap:not(.product-loaded):before {
+    content: "";
+    position: absolute;
+    background: none !important;
+    top: 50%;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    right: 50%;
+    width: 48px;
+    height: 48px;
+    display: block;
+    border: 3px solid white;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    -webkit-animation: wcf-admin-loader 575ms infinite linear;
+    animation: wcf-admin-loader 575ms infinite linear;
+}
+
+.wcf-woo-product-iframe {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    background: #ffffff;
+}
+
+.wcf-close-create-woo-product{
+    background: #fff;
+    border: 1px #fff solid;
+    border-radius: 50%;
+    color: #000;
+    height: 25px;
+    position: fixed;
+    width: 25px;
+    top: -10px;
+    right: auto;
+    z-index: 100000;
+    cursor: pointer;
+    left: -10px;
+    font-size: 20px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.wcf-close-create-woo-product:before{
+    content: "\f158";
+    font-family: dashicons;
+}
+
+#wcf-create-woo-product iframe.wcf-create-woo-product-iframe #wpadminbar,
+#wcf-create-woo-product iframe.wcf-create-woo-product-iframe #adminmenumain{
+    display: none;
+}
+/**
+* ************************
+* Create Woo Product End
+* ************************
+*/
+
+/*
+* Display upgrade popup custom button
+*/
+.wcf-custom-add-new-button.button{
+    margin: 10px;
+}
+
+
+/**
+* Display upgrade popup CSS
+*/
+
+#cartflows-upgrade-notice-overlay {
+    background: #000000b3;
+    filter: alpha(opacity=70);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 100050;
+}
+
+#cartflows-upgrade-notice-popup table {
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+#cartflows-upgrade-notice-popup .inner {
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #fff;
+    z-index: 100059;
+    text-align: right;
+    top: 50%;
+    right: 50%;
+    width: 350px;
+    -webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
+    box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
+}
+
+#cartflows-upgrade-notice-popup .heading {
+    float: right;
+    font-weight: 600;
+    line-height: 35px;
+    overflow: hidden;
+    padding: 0px 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: -webkit-calc( 100% - 40px );
+    width: calc( 100% - 40px );
+    background: #fff;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.cartflows-close-popup-button{
+    border-right: 1px #eee solid;
+    top: 3px;
+}
+.cartflows-close-popup-button:hover{
+    cursor: pointer;
+}
+
+#cartflows-upgrade-notice-popup .contents {
+    clear: both;
+    background: #f1f1f1;
+    padding: 0px 10px;
+}
+
+#cartflows-upgrade-notice-popup .notice {
+    margin: 0 20px 5px 20px;
+}
+
+#cartflows-upgrade-notice-popup .wcf-notice{
+    padding:10px;
+}
+
+
+
+/**
+ * ******************************
+ * Media Query for 768 Devices
+ * ******************************
+ */
+
+ @media only screen and (max-width: 768px) {
+    .wcf-cb-fields, 
+    .wcf-sb-fields {
+        width: 100%;
+        display: block;
+        position: relative;
+        vertical-align: top;
+    }
+ }
+
+/**
+ * Device Responsive Css
+ * ******************************
+ */
+@media only screen and (min-width: 1200px){
+    .wcf-column-left{
+        width: 300px;
+    }
+    .wcf-column-right{
+        width: calc( 100% - 300px );
+    }
+}
+
+@keyframes wcf-admin-loader {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes wcf-admin-loader {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

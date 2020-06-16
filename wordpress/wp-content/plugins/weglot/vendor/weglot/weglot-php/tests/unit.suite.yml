@@ -1,0 +1,14 @@
+# Codeception Test Suite Configuration
+#
+# Suite for unit or integration tests.
+
+actor: UnitTester
+groups:
+  client: ['tests/unit/Client/ClientTest.php', 'tests/unit/Client/Endpoint/Languages.php', 'tests/unit/Client/Endpoint/StatusTest.php', 'tests/unit/Client/Endpoint/TranslateTest.php']
+  client.cache: ['tests/unit/Client/ClientCachingTest.php', 'tests/unit/Client/CachedTranslateTest.php']
+  parser: ['tests/unit/Parser/ParserTest.php', 'tests/unit/Parser/Check/Dom/MetaContentTest.php']
+  util: ['tests/unit/Util/UrlTest.php', 'tests/unit/Util/JsonLdTest.php']
+modules:
+    enabled:
+        - Asserts
+        - \Helper\Unit

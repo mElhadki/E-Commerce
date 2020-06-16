@@ -1,0 +1,67 @@
+language: php
+
+services:
+  - redis-server
+
+dist: trusty
+
+notifications:
+  email:
+    on_failure: change
+
+env:
+  global:
+    - COMPOSER_UP="composer update --no-progress --no-suggest --ansi --prefer-dist"
+    - TEST_COMMAND="./vendor/bin/codecept run unit --no-interaction"
+    - TEST_FLAGS=""
+    - DEPENDENCIES="cache/predis-adapter"
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.4
+      env: TEST_FLAGS="-g client -g parser -g util" DEPENDENCIES="" prefer="low"
+    - php: 5.4
+      env: TEST_FLAGS="-g client -g parser -g util" DEPENDENCIES=""
+    - php: 5.5
+      env: TEST_FLAGS="-g client -g parser -g util" DEPENDENCIES=""
+    - php: 5.6
+    - php: 7.0
+    - php: 7.1
+    - php: 7.2
+      env: COVERAGE=true TEST_FLAGS="--coverage --coverage-xml"
+
+install:
+  - composer config -g github-oauth.github.com "$TOKEN"
+  - |
+    if [[ $prefer = low ]]; then
+      $COMPOSER_UP --prefer-lowest --prefer-stable
+    else
+      $COMPOSER_UP
+    fi
+  - if ! [ -z "$DEPENDENCIES" ]; then composer require ${DEPENDENCIES}; fi;
+
+before_script:
+  - cp .env.dist .env
+  - sed -i "8s/.*/WG_API_KEY=$WG_API_KEY/" .env
+  - |
+    if [[ $COVERAGE = true ]]; then
+      curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      chmod +x ./cc-test-reporter
+      ./cc-test-reporter before-build
+    fi
+
+script:
+  - composer validate --strict --no-check-lock
+  - $TEST_COMMAND $TEST_FLAGS
+
+after_script:
+  - |
+    if [[ $COVERAGE = true ]]; then
+      mv tests/_output/coverage.xml clover.xml
+      ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+    fi
+
+cache:
+  directories:
+    - $HOME/.composer/cache

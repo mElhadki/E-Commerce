@@ -1,0 +1,6 @@
+{
+    "require": {
+        "weglot/weglot-php": "^0.2",
+        "vlucas/phpdotenv": "^2.4"
+    }
+}

@@ -1,0 +1,318 @@
+.notice:not(.wcf-notice) {
+	display: none;
+}
+.wcf-flex {
+	-js-display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-align-content: center;
+	-ms-flex-line-pack: center;
+	align-content: center;
+}
+
+.form-field p.wcf-p {
+	margin: 1em 0;
+}
+
+.wcf-container {
+	max-width: 930px;
+	margin: 0 auto;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+.wcf-menu-page-wrapper .wrap {
+	margin: 0 auto;
+}
+
+.wcf-container #poststuff h2 {
+    padding: 12px 12px;
+}
+.wcf-container .postbox .hndle {
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.wcf-menu-page-wrapper{
+	left: -20px;
+    position: relative;
+    width: calc( 100% + 20px);
+}
+
+.wcf-menu-page-wrapper a {
+	text-decoration: none;
+}
+
+.wcf-general-form-wrap {
+	width: 680px;
+}
+
+.wcf-general-list .inside {
+	padding: 0;
+	margin: 0;
+}
+
+.wcf-list-section .wcf-widget-list li {
+	-js-display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-align-content: center;
+	-ms-flex-line-pack: center;
+	align-content: center;
+	padding: 10px 12px;
+	-moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1) inset;
+	-webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1) inset;
+	margin-bottom: 0;
+}
+
+.wcf-list-section .wcf-widget-list li:nth-child(even) {
+	background-color: #fbfbfb;
+}
+
+.wcf-list-section .wcf-widget-list .activate {
+	border-left: 3px solid #008ec2;
+	padding-left: 12px;
+}
+
+.wcf-widget-list a {
+	text-decoration: none;
+}
+
+.wcf-widget-link-wrapper {
+	-js-display: flex;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-align-content: center;
+	-ms-flex-line-pack: center;
+	align-content: center;
+	display: -webkit-flex;
+	-webkit-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+	flex: auto;
+}
+
+.wcf-widget-list li a:before {
+	display: inline-block;
+	margin-right: 2px;
+	font: normal 20px/1 'dashicons';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: top;
+}
+
+.wcf-widget-link-wrapper a:nth-child(even) {
+	margin: 0 10px;
+}
+
+.wcf-container .postbox .hndle {
+	background: #f7f7f7;
+	border-bottom: 2px solid #e6e6e6;
+}
+.wcf-container .postbox ul{
+	margin: 0;
+}
+.wcf-widget-list a{
+	line-height: 1.6;
+}
+.wcf-widget-list a:focus{
+	box-shadow: none;
+}
+
+.wcf-branding-list{
+	margin:0;
+}
+
+/* Update icon. */
+.wcf-widget-link-wrapper a.updating-message:before {
+	color: #f56e28;
+	content: "\f463";
+}
+
+/* Spins the update icon. */
+.wcf-widget-link-wrapper a.updating-message:before {
+	-webkit-animation: rotation 2s infinite linear;
+	animation: rotation 2s infinite linear;
+}
+
+/* Header */
+.wcf-menu-page-header.general .wcf-container,
+.wcf-menu-page-header.branding .wcf-container,
+.wcf-container.wcf-general,
+.wcf-container.wcf-branding-wrapper {
+	max-width: 930px;
+}
+.wcf-title {
+	flex: auto;
+	align-content: flex-start;
+	text-align: left;
+}
+.wcf-title a,
+.wcf-title span {
+	display: block;
+	outline: none;
+	box-shadow: none;
+	font-size: 1.5rem;
+	color: #333333;
+	font-weight: 500;
+}
+
+.wcf-header-icon {
+	width: 200px;
+	vertical-align: bottom;
+}
+.wcf-top-links {
+	flex: auto;
+	text-align: right;
+	font-weight: 500;
+}
+.wcf-menu-page-header {
+	background-color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.wcf-logo {
+    max-width: 170px;
+}
+
+/* Spinner */
+.wcf-button-spinner:before {
+	font: normal 20px/.5 dashicons;
+	speak: none;
+	display: inline-block;
+	padding: 0;
+	top: 8px;
+	left: -4px;
+	position: relative;
+	vertical-align: top;
+	content: "\f463";
+}
+
+.wcf-button-spinner.loading:before {
+	-webkit-animation: rotation 1s infinite linear;
+	animation: rotation 1s infinite linear;
+}
+
+
+/* New CSS */
+.wcf-setting-tab-wrapper .wcf-setting-tab {
+	padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wcf-setting-tab-wrapper .wcf-tab-title {
+	width: 40%;
+}
+
+.wcf-setting-tab-wrapper .wcf-tab-link-wrapper {
+	width: 60%;
+    text-align: right;
+}
+
+/** Settings Page - Introduction Box */
+#wcf-menu-page .introduction iframe {
+    width: 100%;
+    vertical-align: middle;
+}
+#wcf-menu-page .introduction .iframe-wrap {
+    margin: -6px -12px 0px -12px;
+}
+
+
+/* Form Fields */
+.form-field-label,
+.form-field-data {
+    display: inline-block;
+    padding-right: 5px;
+}
+.form-field-actions {
+    display: inline-block;
+	margin-left: 15px;
+}
+.form-field-actions a {
+    margin: 0 12px 0 0;
+}
+.form-field-actions span.dashicons {
+    margin: 0 5px 0 0;
+}
+.form-field-desc {
+    margin: 5px 0 0;
+}
+#poststuff .general-settings-form .inside {
+    margin: 2em 0 0;
+}
+.general-settings-form .form-field,
+.postbox-container .form-field {
+    border-bottom: 1px solid #e6e6e6;
+    display: block;
+    width: 100%;
+    margin: 0 0 1em;
+    padding: 0 0 1em;
+}
+.general-settings-form .form-field:first-child {
+    margin: 1em 0 1em;
+}
+.general-settings-form .form-field:last-child {
+    border: none;
+}
+
+.postbox-container .form-field{
+	border: none;
+}
+
+.wcf-log-container {
+	word-break: break-all;
+	line-height: 1.5;
+	text-align: left;
+	background-color: #fff;
+	padding: 15px;
+	border-radius: 3px;
+	max-height: 400px;
+	overflow-y: scroll;
+	margin: 20px auto;
+}
+
+.wcf-log-container > pre {
+	display: contents;
+	white-space: pre-wrap;
+}
+
+.wcf_permalink_settings .form-field-desc p{
+	word-break: break-all;
+}
