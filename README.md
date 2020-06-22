@@ -1,6 +1,6 @@
 # E-Commerce
 
-# E-Commerce
+
 
 list of installed plugins
 ```
